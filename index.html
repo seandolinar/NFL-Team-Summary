@@ -1,0 +1,158 @@
+<html>
+ <head>
+  <title>NFL Team Offensive + Special Teams Production</title>
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<style>
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 0;
+}
+
+#d3-container {
+	min-width: 308px;
+	max-width: 600px;
+}
+
+#viz-title {
+	padding-top: 15px;
+	padding-left: 5%;
+	padding-right: 5%; 
+	font-size: 26px;
+}
+#viz-controls {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.control-row {
+	margin: 0 auto;
+}
+
+button {
+	cursor: pointer;
+	margin: 0px;
+	width: 135px;
+	padding: 10px;
+
+  	background-color: #A0A0A0;
+  	border: 0px;
+  	font: inherit;
+  	border-radius: 2px;
+
+}
+
+button:hover {
+	background-color: #C0C0C0;
+}
+
+button:active {
+	background-color: #E0E0E0;
+}
+
+.axis path {
+	stroke: black;
+	stroke-width: .1em;
+}
+
+.axis line {
+    fill: none;
+	stroke: black;
+    stroke-width: .1em;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+	font-size: 14px;
+}
+
+.axis.title {
+	font-size: 16px;
+}
+.tool-tip-text {
+	font-size: 14px;
+}
+.sep {
+	display: inline-block;
+	margin: 10px 10px 0px 10px;
+}
+
+.viz-legend-color {
+    height: 20px;
+    width: 20px;
+    float: left;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+.viz-legend-item {
+    display: inline-block;
+    margin-right: 0px;
+    margin-left: 25px;
+    font-size: 12px;
+    line-height: 20px;
+
+}
+.legend {
+	margin: 20px auto auto 0;
+	display: inline-block;
+}
+#ss-logo {
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+#border {
+	border: 1px solid #303030;
+	max-width: 600px;
+	min-width: 308px;
+	border-radius: 4px;
+}
+.block {
+	border: 1px solid #808080; 
+	padding: 5px;
+	border-radius: 4px;
+}
+.tool-tip-text {
+	font-size: 12px;
+}
+</style>
+
+ </head>
+ <body>
+ 	<div id="border">
+ 	<div id='d3-container'>
+	<div id="viz-title">NFL Team Offensive + Special Teams Production</div>
+	<div id="viz-controls">
+		<div class="control-row">
+			<div class="sep">
+				<button id="button-den" class="team">NE at DEN</button>
+				<button id="button-car" class="team">ARI at CAR</button>
+			</div>
+			<div class="sep">
+				<button id="button-season" class="type">Season</button>
+				<button id="button-gbg" class="type">Game By Game</button>
+			</div>
+			<div class="legend">
+				<div class="viz-legend-item">Passing Yds<div class="viz-legend-color legend-pass" ></div></div>
+				<div class="viz-legend-item">Rushing Yds<div class="viz-legend-color legend-rush" ></div></div>
+				<div class="viz-legend-item">Special Team Yds<div class="viz-legend-color legend-spec" ></div></div>
+			</div>
+			<div class="" style="margin-top: 10px;">
+			<div class="viz-legend-item block">1 block = 5 yds</div>
+		</div>
+		</div>	
+	</div>
+
+	</div>
+	<div id='ss-logo'><img src="stattleship_logotype.png" style="width:125px;"/></div>
+
+</div> 
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<!-- <script type="text/javascript" src="jquery-1.10.2.min.js"></script> -->
+<!-- <script src="d3.v3.js"></script> -->
+ 	<script type="text/javascript" src="ss-nfl-team-summary.js"></script>
+ </body>
+</html>
